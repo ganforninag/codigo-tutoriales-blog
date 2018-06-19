@@ -1,5 +1,6 @@
 package windoctor7.github.io.spring.auth.jwt.controllers;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import windoctor7.github.io.spring.auth.jwt.Usuario;
@@ -14,6 +15,7 @@ import java.util.List;
 public class UsuariosController {
 
     @GetMapping(path = "/users")
+    @PreAuthorize("hasRole('ROLE_USER')")
     public List<Usuario> getUsers(){
         return Arrays.asList(new Usuario(1,"Paco"), new Usuario(2,"Pedro"), new Usuario(3, "Juan"));
     }

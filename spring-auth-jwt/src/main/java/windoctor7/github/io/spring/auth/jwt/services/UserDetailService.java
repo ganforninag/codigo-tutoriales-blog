@@ -20,7 +20,7 @@ public class UserDetailService implements UserDetailsService {
                 @Override
                 public Collection<? extends GrantedAuthority> getAuthorities() {
                     Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-                    grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+                    grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
                     return grantedAuthorities;
                 }
